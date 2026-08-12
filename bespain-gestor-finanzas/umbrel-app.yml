@@ -1,0 +1,36 @@
+manifestVersion: 1
+id: bespain-gestor-finanzas
+name: Gestión Financiera
+tagline: Contabilidad, tesorería y presupuesto del grupo de empresas
+icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/tournament-bracket-manager-gvrcdt/finanzas/public/icon-512.png
+category: finance
+version: "1.0.0"
+port: 3011
+description: >-
+  Gestión financiera integral para el grupo de sociedades: ventas diarias por
+  tienda, compras con lectura de la factura en PDF, caja y arqueos, bancos con
+  importación de extractos (N43, Excel, CSV y PDF) y conciliación, stock por
+  coste medio, deudas (préstamos leídos del fichero del banco, pólizas de
+  crédito, renting, tarjetas y aplazamientos de Hacienda), inversiones,
+  presupuesto y previsión de tesorería, contabilidad por partida doble con
+  balance y pérdidas y ganancias, e informes de IVA (303 y 347).
+
+  Funciona sin conexión y guarda las copias de seguridad en el propio Umbrel,
+  fuera del navegador: si el navegador limpia sus datos, se recuperan desde
+  aquí. La contraseña que muestra Umbrel es la que se pone en «Copias de
+  seguridad → Copias en tu servidor».
+developer: BESPAIN
+website: https://github.com/voleyplayaponiente-glitch/clauderoutine
+submitter: BESPAIN
+submission: https://github.com/voleyplayaponiente-glitch/clauderoutine
+repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
+support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
+gallery: []
+releaseNotes: >-
+  Primera versión instalable en el Umbrel. Hasta ahora la aplicación se usaba
+  desde la web y solo los respaldos vivían en el servidor; ahora la app y su
+  almacén de copias comparten dirección, así que las copias funcionan dentro de
+  casa sin HTTPS ni túneles.
+dependencies: []
+path: ""
+deterministicPassword: true

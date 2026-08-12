@@ -1,0 +1,33 @@
+# App de Umbrel: Gestión Financiera.
+#
+# Dos servicios y UNA sola puerta: nginx sirve la aplicación y pasa todo lo que
+# empieza por /api al almacén de copias. Que compartan dirección no es un
+# detalle de montaje: es lo que hace que las copias funcionen sin HTTPS, sin
+# CORS y sin túneles cuando se usa la app dentro de casa.
+services:
+  web:
+    image: ghcr.io/voleyplayaponiente-glitch/gestor-finanzas:latest
+    restart: on-failure
+    stop_grace_period: 30s
+    ports:
+      - "3011:80"
+    depends_on:
+      - api
+
+  api:
+    image: ghcr.io/voleyplayaponiente-glitch/gestor-finanzas-api:latest
+    restart: on-failure
+    stop_grace_period: 30s
+    environment:
+      # La contraseña que Umbrel muestra en la app ES el secreto de las copias:
+      # así no hay que generar ni apuntar nada aparte.
+      SECRETO: ${APP_PASSWORD}
+      PUERTO: 3001
+      COPIAS_DIR: /datos
+      COPIAS_RETENCION: 30
+      # El servicio no se publica al exterior (no tiene `ports`): solo se llega
+      # a él a través de nginx, y por tanto desde el mismo origen que la app.
+      ORIGEN_PERMITIDO: "*"
+    volumes:
+      # Las copias viven en el disco del Umbrel: actualizar la app no las toca.
+      - ${APP_DATA_DIR}/copias:/datos
