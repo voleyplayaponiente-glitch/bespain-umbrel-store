@@ -4,7 +4,7 @@ name: Gestión Financiera
 tagline: Contabilidad, tesorería y presupuesto del grupo de empresas
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/tournament-bracket-manager-gvrcdt/finanzas/public/icon-512.png
 category: finance
-version: "1.1.1"
+version: "1.1.2"
 port: 3011
 description: >-
   Gestión financiera integral para el grupo de sociedades: ventas diarias por
@@ -27,10 +27,10 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  El acuerdo de aplazamiento de Hacienda se sube en Deudas, con el botón «Subir
-  fichero del banco o de Hacienda». Si un documento se sube en la pantalla
-  equivocada (por ejemplo el acuerdo de la AEAT en la importación de extractos
-  de Bancos), la app dice a cuál pertenece en vez de limitarse a fallar.
+  Arreglo importante: servida desde el Umbrel, la aplicación no podía leer
+  NINGÚN PDF (facturas, extractos, préstamos ni acuerdos de Hacienda) porque el
+  servidor web entregaba el motor de lectura con un tipo que el navegador
+  rechaza. Ya se leen todos, también sin conexión.
 dependencies: []
 path: ""
 deterministicPassword: true
