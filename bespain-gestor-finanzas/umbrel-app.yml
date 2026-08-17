@@ -4,7 +4,7 @@ name: Gestión Financiera
 tagline: Contabilidad, tesorería y presupuesto del grupo de empresas
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/tournament-bracket-manager-gvrcdt/finanzas/public/icon-512.png
 category: finance
-version: "1.0.0"
+version: "1.1.0"
 port: 3011
 description: >-
   Gestión financiera integral para el grupo de sociedades: ventas diarias por
@@ -27,10 +27,12 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Primera versión instalable en el Umbrel. Hasta ahora la aplicación se usaba
-  desde la web y solo los respaldos vivían en el servidor; ahora la app y su
-  almacén de copias comparten dirección, así que las copias funcionan dentro de
-  casa sin HTTPS ni túneles.
+  Sube el Modelo 200 (Impuesto sobre Sociedades) en Configuración → Ejercicio
+  anterior: de un solo PDF salen la sociedad, sus socios, el balance, la cuenta
+  de resultados, la liquidación y las bases negativas pendientes. Además, la
+  configuración del servidor de copias pasa a ser una sola para todo el grupo
+  (antes cada empresa nueva arrancaba sin copias) y el Dashboard avisa en rojo
+  si hay datos sin copia fuera del navegador.
 dependencies: []
 path: ""
 deterministicPassword: true
