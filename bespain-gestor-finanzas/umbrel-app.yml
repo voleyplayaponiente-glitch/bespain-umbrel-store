@@ -4,7 +4,7 @@ name: Gestión Financiera
 tagline: Contabilidad, tesorería y presupuesto del grupo de empresas
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/tournament-bracket-manager-gvrcdt/finanzas/public/icon-512.png
 category: finance
-version: "1.1.3"
+version: "1.1.4"
 port: 3011
 description: >-
   Gestión financiera integral para el grupo de sociedades: ventas diarias por
@@ -27,11 +27,11 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Arreglo importante: servida desde el Umbrel, la aplicación no podía leer
-  NINGÚN PDF (facturas, extractos, préstamos ni acuerdos de Hacienda) porque el
-  servidor web entregaba el motor de lectura con un tipo que el navegador
-  rechaza. Ya se leen todos, también sin conexión. La versión 1.1.2 llevaba
-  este mismo arreglo pero su imagen no llegó a publicarse.
+  Cuando un documento se sube en la pantalla equivocada, la app dice a cuál
+  pertenece en vez de dar un error que no ayuda. Es fácil confundirse: el
+  acuerdo de aplazamiento y la declaración del Impuesto sobre Sociedades se
+  descargan de la Sede con nombres casi idénticos, y van a sitios distintos
+  (Deudas y Configuración → Ejercicio anterior).
 dependencies: []
 path: ""
 deterministicPassword: true
