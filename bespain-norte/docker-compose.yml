@@ -1,0 +1,70 @@
+# App de Umbrel: Norte.
+#
+# Tres servicios y UNA sola puerta: nginx sirve la interfaz y pasa todo lo que
+# empieza por /api al servidor, que a su vez es el único que habla con la base
+# de datos. Ni el servidor ni PostgreSQL publican puerto: desde la red de casa
+# solo se ve el 3012.
+#
+# Que la interfaz y su API compartan dirección no es un detalle de montaje: es
+# lo que evita el CORS y el contenido mixto sin necesidad de HTTPS ni túneles.
+services:
+  web:
+    image: ghcr.io/voleyplayaponiente-glitch/norte-web:latest
+    restart: on-failure
+    stop_grace_period: 30s
+    ports:
+      - "3012:80"
+    depends_on:
+      - api
+
+  api:
+    image: ghcr.io/voleyplayaponiente-glitch/norte-api:latest
+    restart: on-failure
+    stop_grace_period: 30s
+    environment:
+      # La conexión va por piezas y no como URL a propósito: la contraseña la
+      # genera Umbrel, y en cuanto trae una `@` o una `/` una cadena de
+      # conexión se parte por el sitio equivocado. El servidor la escapa al
+      # construir la URL, que es lo único que no se puede hacer desde aquí.
+      NORTE_BD_HOST: db
+      NORTE_BD_USUARIO: norte
+      NORTE_BD_CONTRASENA: ${APP_PASSWORD}
+      NORTE_BD_NOMBRE: norte
+      # El secreto que firma las sesiones se deriva de la contraseña que ya
+      # muestra Umbrel, así no hay nada que generar ni apuntar aparte. Va
+      # repetida a propósito: Norte exige 32 caracteres como mínimo y así se
+      # cumple sea cual sea el largo de la contraseña de Umbrel. Es
+      # determinista, de modo que reiniciar la app no cierra la sesión de nadie.
+      NORTE_SECRETO_SESION: norte-sesion-v1-${APP_PASSWORD}-${APP_PASSWORD}
+      NORTE_PUERTO: 3012
+      NODE_ENV: production
+      NORTE_DATOS_DIR: /datos
+      # La app se sirve por http dentro de casa; exigir cookies `secure` aquí
+      # impediría entrar.
+      NORTE_COOKIE_SEGURA: "false"
+    volumes:
+      # Los documentos subidos (nóminas, extractos) viven en el disco del
+      # Umbrel: actualizar la app no los toca.
+      - ${APP_DATA_DIR}/documentos:/datos
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    restart: on-failure
+    stop_grace_period: 30s
+    environment:
+      POSTGRES_USER: norte
+      POSTGRES_PASSWORD: ${APP_PASSWORD}
+      POSTGRES_DB: norte
+    volumes:
+      # AQUÍ viven los datos de verdad. Es el directorio que hay que respaldar.
+      - ${APP_DATA_DIR}/postgres:/var/lib/postgresql/data
+    healthcheck:
+      # Sin esto, el servidor arranca antes que la base de datos, la migración
+      # falla y el contenedor entra en bucle de reinicio.
+      test: ["CMD-SHELL", "pg_isready -U norte -d norte"]
+      interval: 5s
+      timeout: 5s
+      retries: 20

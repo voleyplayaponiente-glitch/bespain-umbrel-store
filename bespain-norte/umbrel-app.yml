@@ -1,0 +1,40 @@
+manifestVersion: 1
+id: bespain-norte
+name: Norte
+tagline: Control presupuestario personal y compartido
+icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
+category: finance
+version: "0.2.0"
+port: 3012
+description: >-
+  Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
+  el compartido: cuentas, movimientos, presupuesto por sobres, deudas con su
+  cuadro de amortización, tarjetas de crédito por ciclo, inversiones y la
+  evolución del patrimonio neto, que es la cifra que de verdad manda.
+
+  A diferencia de las otras dos aplicaciones, Norte **no guarda nada en el
+  navegador**: los datos viven en una base de datos PostgreSQL dentro de tu
+  Umbrel. Limpiar el navegador, cambiar de móvil o entrar desde otro equipo no
+  pierde nada.
+
+  El registro está cerrado por diseño: la primera cuenta que se crea es la del
+  dueño de la instalación y a partir de ahí solo se entra con un enlace de
+  invitación, que vale una sola vez y caduca a los siete días. En un espacio
+  compartido, cada uno mantiene su espacio personal invisible para el otro.
+developer: BESPAIN
+website: https://github.com/voleyplayaponiente-glitch/clauderoutine
+submitter: BESPAIN
+submission: https://github.com/voleyplayaponiente-glitch/clauderoutine
+repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
+support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
+gallery: []
+releaseNotes: >-
+  Primera versión en la tienda. Están los cimientos: cuentas de usuario,
+  espacios (personal, pareja y negocio) con aislamiento probado entre ellos,
+  categorías en español listas para usar, y el registro cerrado con
+  invitaciones por enlace.
+
+  Los datos se guardan en PostgreSQL dentro del Umbrel, no en el navegador.
+dependencies: []
+path: ""
+deterministicPassword: true
