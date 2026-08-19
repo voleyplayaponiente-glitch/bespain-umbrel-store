@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.3.0"
+version: "0.3.1"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,19 +29,23 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Primera versión en la tienda, ya utilizable en el día a día.
+  Arreglo del arranque: el servidor no llegaba a levantarse en una
+  instalación nueva porque la migración de la base de datos no encontraba su
+  cadena de conexión, y el contenedor se quedaba reiniciando. Ya está.
 
-  Apuntar un gasto son tres toques: pulsa Ctrl+K (o Cmd+K) y escribe «café
-  3,40 ayer». Entiende el importe, la fecha y si es ingreso o gasto, y si no
-  encuentra el importe lo dice en vez de inventárselo.
+  Norte lleva el control del presupuesto personal y el compartido. Apuntar un
+  gasto son tres toques: pulsa Ctrl+K (o Cmd+K) y escribe «café 3,40 ayer».
+  Entiende el importe, la fecha y si es ingreso o gasto, y si no encuentra el
+  importe lo dice en vez de inventárselo.
 
   Incluye cuentas con su saldo, movimientos con filtros y búsqueda, y
   recurrentes (alquiler, nómina, suscripciones) que dejan movimientos
   previstos: aparecen en la lista pero no tocan el saldo hasta que confirmas
   que han pasado, para que el saldo siempre cuadre con el del banco.
 
-  El registro está cerrado: la primera cuenta es la del dueño y el resto
-  entra con un enlace de invitación de un solo uso.
+  El registro está cerrado: la primera cuenta es la del dueño y el resto entra
+  con un enlace de invitación de un solo uso.
+
 dependencies: []
 path: ""
 deterministicPassword: true
