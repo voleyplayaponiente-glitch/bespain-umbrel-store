@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.4.3"
+version: "0.4.4"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,23 +29,19 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Arreglo importante: en la versión anterior el contenedor de las copias
-  arrancaba y se apagaba en el acto sin hacer nada ni dejar rastro, así que las
-  copias de seguridad NO se estaban haciendo. Si vienes de la 0.4.1 o la 0.4.2,
-  actualiza.
+  Norte ya no se deja engañar con el disco externo. Si creas la carpeta
+  "norte-copias" en un sitio que parece un disco pero en realidad es el disco
+  del propio Umbrel —pasa si el disco no llegó a montarse—, no copia nada y te
+  lo dice en la pantalla de inicio. Antes habría anunciado "copia en el disco
+  externo" mientras copiaba sobre el mismo disco que intenta proteger.
 
-  La causa: el guion de copias venía como fichero suelto de la app, y Umbrel
-  solo copia el docker-compose y la ficha. Ahora viaja dentro de su propia
-  imagen, que es lo que sí se actualiza solo.
+  Cómo preparar el disco, con el orden correcto: conecta el disco, comprueba con
+  "lsblk" que aparece, móntalo bajo /media, y SOLO ENTONCES crea dentro la
+  carpeta "norte-copias". Después reinicia Norte.
 
-  La app avisaba de ello en la pantalla de inicio, en rojo y con todas las
-  letras, que es justo para lo que está esa tarjeta: una copia que falla en
-  silencio es peor que no tener copias.
-
-  Con esto queda funcionando todo lo de las dos versiones anteriores: copia
-  diaria a las 04:30 comprobada antes de darse por buena, siete diarias y doce
-  mensuales, copia al disco externo si le pones una carpeta «norte-copias», y
-  un botón para hacer una copia en el momento.
+  Sigue todo lo demás: copia diaria a las 04:30 comprobada antes de darse por
+  buena, siete diarias y doce mensuales, la segunda copia al disco externo, y el
+  botón para hacer una copia en el momento.
 
 dependencies: []
 path: ""
