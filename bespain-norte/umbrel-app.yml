@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.4.2"
+version: "0.4.3"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,26 +29,23 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Las copias de seguridad ya no se quedan solo dentro del Umbrel: Norte las
-  lleva también a un disco externo, y también solo.
+  Arreglo importante: en la versión anterior el contenedor de las copias
+  arrancaba y se apagaba en el acto sin hacer nada ni dejar rastro, así que las
+  copias de seguridad NO se estaban haciendo. Si vienes de la 0.4.1 o la 0.4.2,
+  actualiza.
 
-  Para activarlo: conecta un disco al Umbrel, móntalo bajo /media, crea dentro
-  una carpeta llamada "norte-copias" y reinicia Norte. A partir de ahí, cada
-  copia sale al disco en cuanto se hace; si el disco estaba desconectado, las
-  pendientes salen en cuanto vuelve.
+  La causa: el guion de copias venía como fichero suelto de la app, y Umbrel
+  solo copia el docker-compose y la ficha. Ahora viaja dentro de su propia
+  imagen, que es lo que sí se actualiza solo.
 
-  Esa carpeta "norte-copias" es obligatoria a propósito. Es lo único que
-  distingue un disco conectado de un disco que no está, y evita que las copias
-  acaben llenando el disco del propio Umbrel. También sirve de permiso: Norte
-  solo escribe en discos que tú has marcado.
+  La app avisaba de ello en la pantalla de inicio, en rojo y con todas las
+  letras, que es justo para lo que está esa tarjeta: una copia que falla en
+  silencio es peor que no tener copias.
 
-  Del disco externo no se borra nada nunca. La rotación (siete diarias y doce
-  mensuales) se aplica dentro del Umbrel; fuera se va acumulando el archivo.
-
-  El estado del disco se ve en la pantalla de inicio, junto al de las copias: si
-  lleva días sin aparecer, te lo dice. Ten en cuenta que un disco enchufado al
-  Umbrel protege de que se estropee el disco interno, no de un robo o un
-  incendio: para eso hace falta una copia fuera de casa.
+  Con esto queda funcionando todo lo de las dos versiones anteriores: copia
+  diaria a las 04:30 comprobada antes de darse por buena, siete diarias y doce
+  mensuales, copia al disco externo si le pones una carpeta «norte-copias», y
+  un botón para hacer una copia en el momento.
 
 dependencies: []
 path: ""

@@ -58,18 +58,24 @@ services:
       db:
         condition: service_healthy
 
-  # Copias de seguridad diarias. Usa la MISMA imagen que la base de datos, así
-  # que `pg_dump` es exactamente de la versión del servidor: la causa número
-  # uno de volcados que fallan en montajes caseros es justo esa diferencia.
+  # Copias de seguridad diarias. Es `postgres:16-alpine` con el guion dentro,
+  # así que `pg_dump` es exactamente de la versión del servidor: la causa
+  # número uno de volcados que fallan en montajes caseros es justo esa
+  # diferencia. Las capas ya están descargadas por el servicio `db`.
+  #
+  # El guion va DENTRO de la imagen. Montarlo desde disco no funciona aquí:
+  # umbreld solo copia `docker-compose.yml` y `umbrel-app.yml` a la carpeta de
+  # la app, y resuelve las rutas relativas del compose desde SU directorio. El
+  # resultado era un directorio vacío llamado `copias.sh` y un contenedor que
+  # salía con código 0 sin hacer ni decir nada.
   #
   # Cada copia se comprueba antes de darse por buena y el estado se publica en
   # `copias/estado.json`, que es lo que la app enseña en la pantalla de inicio.
   # Una copia que falla en silencio es peor que no tener copias.
   copias:
-    image: postgres:16-alpine
+    image: ghcr.io/voleyplayaponiente-glitch/norte-copias:latest
     restart: on-failure
     stop_grace_period: 30s
-    entrypoint: ["/bin/sh", "/copias.sh"]
     environment:
       # La hora es la del contenedor: con el huso puesto, «04:30» son las 4:30
       # de la madrugada de aquí y no las 6:30, que es lo que saldría en UTC.
@@ -85,7 +91,6 @@ services:
       # escribir en él: llenarlo del todo dejaría copias a medias.
       NORTE_EXTERNO_MINIMO_MB: "500"
     volumes:
-      - ./copias.sh:/copias.sh:ro
       - ${APP_DATA_DIR}/copias:/copias
       - ${APP_DATA_DIR}/documentos:/documentos:ro
       - ${APP_DATA_DIR}/peticion-copia:/peticion
