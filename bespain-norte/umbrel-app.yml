@@ -4,13 +4,14 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.8.0"
+version: "0.9.0"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
   el compartido: cuentas, movimientos, presupuesto por sobres, deudas con su
-  cuadro de amortización, tarjetas de crédito por ciclo, inversiones y la
-  evolución del patrimonio neto, que es la cifra que de verdad manda.
+  cuadro de amortización, tarjetas de crédito por ciclo, inversiones, gastos
+  compartidos y la evolución del patrimonio neto, que es la cifra que de verdad
+  manda.
 
   A diferencia de las otras dos aplicaciones, Norte **no guarda nada en el
   navegador**: los datos viven en una base de datos PostgreSQL dentro de tu
@@ -29,22 +30,31 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  La pantalla de inicio pasa a ser el cuadro de mando. Arriba, en grande, tu
-  patrimonio neto: todo lo que tienes menos todo lo que debes, con cuánto ha
-  cambiado desde el mes pasado y un gráfico con su evolución mes a mes. La
-  primera foto se guarda al entrar; a partir de ahí, cada mes se añade sola.
+  Gastos compartidos. Marca un gasto como compartido y Norte te dice, en una
+  frase y en grande, quién le tiene que pasar cuánto a quién. Quien pagó sale
+  de la cuenta de la que salió el dinero: no hay ningún campo que rellenar y
+  que se olvide.
 
-  Debajo, los próximos 30 días: con los recibos previstos, las cuotas de tus
-  deudas y los pagos de tarjeta, Norte dibuja adónde va el saldo y te dice cuál
-  será el día más apretado del mes y con cuánto. Solo cuenta lo que ya está
-  comprometido — no se inventa lo que "sueles gastar", porque esa línea se
-  cumple en la pantalla y nunca en el banco.
+  Puedes repartir a partes iguales, por porcentajes, con un importe fijo
+  («yo pongo 400 € de la casa y el resto lo pones tú») o en proporción a lo que
+  ingresa cada uno, que es lo que la gente quiere de verdad cuando los sueldos
+  son distintos. En ese caso la pantalla te enseña con qué ingresos ha
+  repartido, mes a mes: repartir según los ingresos sin enseñarlos es pedir que
+  alguien se fíe de una cifra que no puede comprobar.
 
-  Y una lista con lo que viene: los próximos recibos y cuotas, cada uno con su
-  fecha y su importe, para que ninguno te pille de sorpresa.
+  Cuando cerráis cuentas, Norte calcula las transferencias mínimas de verdad,
+  buscando los grupos que ya se saldan entre ellos. En muchos casos es una
+  transferencia menos que la que propone cualquier otra app. El cierre se
+  guarda con su fecha y sus pagos, y si después aparece un ticket con fecha
+  vieja te avisa en vez de tragárselo.
 
-  Los gráficos se pueden recorrer con el dedo, el ratón o el teclado, y debajo
-  de cada uno están los datos en tabla, por si prefieres los números.
+  Un gasto pagado desde una cuenta privada entra en la cuenta común —el otro
+  necesita ver el concepto y el importe para estar de acuerdo— pero Norte no
+  dice de qué cuenta salió.
+
+  Y si el espacio es un negocio, cada socio tiene su cuenta corriente con la
+  sociedad: lo aportado, lo retirado, lo que le toca del resultado según su
+  participación y lo que ya ha cobrado.
 
 dependencies: []
 path: ""
