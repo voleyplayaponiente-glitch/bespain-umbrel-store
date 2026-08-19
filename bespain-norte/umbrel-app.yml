@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.3.2"
+version: "0.4.0"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,22 +29,25 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  La pantalla de inicio se había quedado desactualizada sobre sí misma: decía
-  que las cuentas y los movimientos estaban por llegar cuando ya estaban ahí.
-  Ahora cuenta lo que hay y explica el atajo para apuntar un gasto.
+  Ya no hace falta teclear los movimientos uno a uno. La pestaña Documentos es
+  un buzón: sueltas ahí el extracto del banco o la nómina y Norte los lee.
 
-  Norte lleva el control del presupuesto personal y el compartido. Apuntar un
-  gasto son tres toques: pulsa Ctrl+K (o Cmd+K) y escribe «café 3,40 ayer».
-  Entiende el importe, la fecha y si es ingreso o gasto, y si no encuentra el
-  importe lo dice en vez de inventárselo.
+  Entiende el fichero Norma 43 (.q43) que dan casi todos los bancos españoles,
+  los Excel (.xlsx y los .xls antiguos), los CSV y los PDF con texto. Si tu
+  banco te deja elegir, baja el .q43: es el único formato en el que no hay que
+  adivinar nada.
 
-  Incluye cuentas con su saldo, movimientos con filtros y búsqueda, y
-  recurrentes (alquiler, nómina, suscripciones) que dejan movimientos
-  previstos: aparecen en la lista pero no tocan el saldo hasta que confirmas
-  que han pasado, para que el saldo siempre cuadre con el del banco.
+  Nada entra en tus cuentas sin que lo veas. Norte te enseña lo que ha
+  entendido —fecha, concepto e importe de cada movimiento— y tú marcas lo que
+  quieres importar. Lo que ya tenías aparece señalado y no se duplica, ni
+  aunque subas el mismo mes dos veces o el mismo extracto en Excel y en PDF.
 
-  El registro está cerrado: la primera cuenta es la del dueño y el resto entra
-  con un enlace de invitación de un solo uso.
+  De una nómina saca la empresa, el periodo, el bruto, la retención de IRPF, la
+  Seguridad Social y el líquido, y propone el ingreso del líquido. Lo que no
+  consigue leer lo deja en blanco y lo dice, en lugar de rellenarlo con un cero.
+
+  Si un extracto trae el número de tarjeta completo dentro del concepto —los
+  hay—, Norte lo guarda tapado: solo los cuatro últimos.
 
 dependencies: []
 path: ""
