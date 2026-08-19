@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.4.4"
+version: "0.5.0"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,19 +29,28 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Norte ya no se deja engañar con el disco externo. Si creas la carpeta
-  "norte-copias" en un sitio que parece un disco pero en realidad es el disco
-  del propio Umbrel —pasa si el disco no llegó a montarse—, no copia nada y te
-  lo dice en la pantalla de inicio. Antes habría anunciado "copia en el disco
-  externo" mientras copiaba sobre el mismo disco que intenta proteger.
+  Nueva pestaña: Presupuesto. Repartes el mes en sobres y cada euro que esperas
+  ingresar tiene un trabajo asignado. La cifra grande de arriba es lo que te
+  queda sin repartir: mientras no sea cero, hay dinero suelto.
 
-  Cómo preparar el disco, con el orden correcto: conecta el disco, comprueba con
-  "lsblk" que aparece, móntalo bajo /media, y SOLO ENTONCES crea dentro la
-  carpeta "norte-copias". Después reinicia Norte.
+  Cada barra lleva una marca con el día del mes, así que no ves solo cuánto
+  llevas gastado sino si vas adelantado. Y cada sobre te dice cuánto puedes
+  gastar al día con lo que queda, descontando los recibos que aún no han pasado:
+  un sobre con 750 € y el alquiler a punto de salir no tiene 750 € libres.
 
-  Sigue todo lo demás: copia diaria a las 04:30 comprobada antes de darse por
-  buena, siete diarias y doce mensuales, la segunda copia al disco externo, y el
-  botón para hacer una copia en el momento.
+  Puedes marcar los sobres que arrastran: lo que sobra pasa al mes siguiente, y
+  lo que te has pasado también. Al cerrar el mes se aplica de una vez.
+
+  El botón "Proponer con mi gasto real" rellena el presupuesto mirando lo que
+  gastaste de verdad: la mediana de los últimos seis meses en lo variable y el
+  último mes en los recibos fijos. Usa la mediana a propósito, para que la
+  revisión del coche de marzo no se convierta en tu presupuesto de transporte de
+  todos los meses.
+
+  Ojo con una cosa: los ingresos solo cuentan si están clasificados en una
+  categoría de ingreso. Es deliberado — un traspaso entre dos cuentas tuyas
+  también entra como apunte positivo, y sumarlo daría un presupuesto con dinero
+  que no existe.
 
 dependencies: []
 path: ""
