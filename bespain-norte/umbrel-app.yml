@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.7.0"
+version: "0.8.0"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,29 +29,22 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Nueva pestaña: Inversiones. Apuntas lo que compras, lo que vendes y los
-  dividendos, pones el precio de vez en cuando y Norte calcula el coste medio,
-  lo que llevas ganado sin vender y tu rentabilidad real.
+  La pantalla de inicio pasa a ser el cuadro de mando. Arriba, en grande, tu
+  patrimonio neto: todo lo que tienes menos todo lo que debes, con cuánto ha
+  cambiado desde el mes pasado y un gráfico con su evolución mes a mes. La
+  primera foto se guarda al entrar; a partir de ahí, cada mes se añade sola.
 
-  La rentabilidad es una TIR: tiene en cuenta cuándo metiste cada euro, no solo
-  cuánto. Si todavía no se puede calcular —porque solo has aportado y aún no has
-  valorado la cartera— dice que no se puede, en vez de enseñarte un cero. Para
-  comparar con un índice hace falta otra rentabilidad, la ponderada por tiempo,
-  que necesita valoraciones periódicas: Norte aún no las guarda y te lo dice en
-  la propia pantalla en lugar de darte un número que parece comparable.
+  Debajo, los próximos 30 días: con los recibos previstos, las cuotas de tus
+  deudas y los pagos de tarjeta, Norte dibuja adónde va el saldo y te dice cuál
+  será el día más apretado del mes y con cuánto. Solo cuenta lo que ya está
+  comprometido — no se inventa lo que "sueles gastar", porque esa línea se
+  cumple en la pantalla y nunca en el banco.
 
-  Puedes fijar tu asignación objetivo (por ejemplo 70 % variable, 25 % fija,
-  5 % monetario) y Norte avisa cuando la cartera se desvía más de 5 puntos, con
-  cuánto habría que mover para volver. Cinco PUNTOS, no un 5 % relativo:
-  rebalancear por cualquier desvío pequeño solo genera comisiones e impuestos.
+  Y una lista con lo que viene: los próximos recibos y cuotas, cada uno con su
+  fecha y su importe, para que ninguno te pille de sorpresa.
 
-  Los precios los pones tú: Norte no llama a ninguna web de cotizaciones. Cada
-  precio se guarda con su fecha, y si lleva más de dos meses sin actualizar te
-  lo marca — un precio sin fecha parece de hoy aunque sea de hace medio año.
-
-  Un aviso que verás si vendes con ganancia: el coste medio es lo que enseña tu
-  bróker, pero Hacienda liquida acciones y fondos por FIFO, así que para la
-  declaración la cifra puede no ser esa.
+  Los gráficos se pueden recorrer con el dedo, el ratón o el teclado, y debajo
+  de cada uno están los datos en tabla, por si prefieres los números.
 
 dependencies: []
 path: ""
