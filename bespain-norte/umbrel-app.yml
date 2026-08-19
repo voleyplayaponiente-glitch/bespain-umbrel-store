@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.4.0"
+version: "0.4.1"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,25 +29,26 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Ya no hace falta teclear los movimientos uno a uno. La pestaña Documentos es
-  un buzón: sueltas ahí el extracto del banco o la nómina y Norte los lee.
+  Norte ya hace copias de seguridad solas, una al día a las 04:30, sin que
+  tengas que acordarte de nada ni añadir tareas al servidor.
 
-  Entiende el fichero Norma 43 (.q43) que dan casi todos los bancos españoles,
-  los Excel (.xlsx y los .xls antiguos), los CSV y los PDF con texto. Si tu
-  banco te deja elegir, baja el .q43: es el único formato en el que no hay que
-  adivinar nada.
+  Cada copia lleva la base de datos entera y los documentos que hayas subido, y
+  se comprueba antes de darse por buena: un fichero a medias no llega a
+  parecerse a una copia. Se guardan las siete últimas diarias y la más reciente
+  de cada uno de los doce últimos meses; las viejas se borran solas.
 
-  Nada entra en tus cuentas sin que lo veas. Norte te enseña lo que ha
-  entendido —fecha, concepto e importe de cada movimiento— y tú marcas lo que
-  quieres importar. Lo que ya tenías aparece señalado y no se duplica, ni
-  aunque subas el mismo mes dos veces o el mismo extracto en Excel y en PDF.
+  Lo importante está en la pantalla de inicio: ahí ves si las copias van al día,
+  cuándo fue la última y cuánto ocupa, con un botón para hacer una copia en el
+  momento. Si el servicio se para o una copia falla, te lo dice en esa misma
+  pantalla. Una copia que falla en silencio es peor que no tener copias.
 
-  De una nómina saca la empresa, el periodo, el bruto, la retención de IRPF, la
-  Seguridad Social y el líquido, y propone el ingreso del líquido. Lo que no
-  consigue leer lo deja en blanco y lo dice, en lugar de rellenarlo con un cero.
+  Recuerda que las copias viven en el mismo Umbrel: protegen de un borrado o de
+  una actualización que salga mal, no de que se estropee el disco. De vez en
+  cuando conviene llevarse la carpeta a otro sitio.
 
-  Si un extracto trae el número de tarjeta completo dentro del concepto —los
-  hay—, Norte lo guarda tapado: solo los cuatro últimos.
+  También sigue disponible lo de la versión anterior: la pestaña Documentos
+  para subir extractos del banco (Norma 43, Excel, CSV o PDF) y nóminas, con
+  revisión antes de importar nada y sin duplicar lo que ya tenías.
 
 dependencies: []
 path: ""

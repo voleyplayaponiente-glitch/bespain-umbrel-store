@@ -39,6 +39,8 @@ services:
       NORTE_PUERTO: 3012
       NODE_ENV: production
       NORTE_DATOS_DIR: /datos
+      NORTE_COPIAS_DIR: /copias
+      NORTE_COPIAS_PETICION: /peticion/copia-ahora
       # La app se sirve por http dentro de casa; exigir cookies `secure` aquí
       # impediría entrar.
       NORTE_COOKIE_SEGURA: "false"
@@ -46,6 +48,44 @@ services:
       # Los documentos subidos (nóminas, extractos) viven en el disco del
       # Umbrel: actualizar la app no los toca.
       - ${APP_DATA_DIR}/documentos:/datos
+      # Las copias, en SOLO LECTURA: la app las enseña en la pantalla de inicio
+      # pero no puede tocarlas. Un fallo suyo no puede borrar el respaldo.
+      - ${APP_DATA_DIR}/copias:/copias:ro
+      # El único hueco de escritura hacia el servicio de copias: aquí deja la
+      # señal el botón «Hacer una copia ahora».
+      - ${APP_DATA_DIR}/peticion-copia:/peticion
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Copias de seguridad diarias. Usa la MISMA imagen que la base de datos, así
+  # que `pg_dump` es exactamente de la versión del servidor: la causa número
+  # uno de volcados que fallan en montajes caseros es justo esa diferencia.
+  #
+  # Cada copia se comprueba antes de darse por buena y el estado se publica en
+  # `copias/estado.json`, que es lo que la app enseña en la pantalla de inicio.
+  # Una copia que falla en silencio es peor que no tener copias.
+  copias:
+    image: postgres:16-alpine
+    restart: on-failure
+    stop_grace_period: 30s
+    entrypoint: ["/bin/sh", "/copias.sh"]
+    environment:
+      # La hora es la del contenedor: con el huso puesto, «04:30» son las 4:30
+      # de la madrugada de aquí y no las 6:30, que es lo que saldría en UTC.
+      TZ: Europe/Madrid
+      NORTE_BD_HOST: db
+      NORTE_BD_USUARIO: norte
+      NORTE_BD_CONTRASENA: ${APP_PASSWORD}
+      NORTE_BD_NOMBRE: norte
+      NORTE_COPIAS_HORA: "04:30"
+      NORTE_COPIAS_DIARIAS: "7"
+      NORTE_COPIAS_MENSUALES: "12"
+    volumes:
+      - ./copias.sh:/copias.sh:ro
+      - ${APP_DATA_DIR}/copias:/copias
+      - ${APP_DATA_DIR}/documentos:/documentos:ro
+      - ${APP_DATA_DIR}/peticion-copia:/peticion
     depends_on:
       db:
         condition: service_healthy
