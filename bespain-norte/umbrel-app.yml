@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.9.0"
+version: "1.0.0"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -30,31 +30,35 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Gastos compartidos. Marca un gasto como compartido y Norte te dice, en una
-  frase y en grande, quién le tiene que pasar cuánto a quién. Quien pagó sale
-  de la cuenta de la que salió el dinero: no hay ningún campo que rellenar y
-  que se olvide.
+  Norte 1.0. Con esta versión está terminado todo lo que se planeó: cuentas y
+  movimientos, lectura de extractos y nóminas, presupuesto por sobres, deudas y
+  tarjetas, inversiones, el cuadro de mando, gastos compartidos y, ahora,
+  exportación, informes y licencias.
 
-  Puedes repartir a partes iguales, por porcentajes, con un importe fijo
-  («yo pongo 400 € de la casa y el resto lo pones tú») o en proporción a lo que
-  ingresa cada uno, que es lo que la gente quiere de verdad cuando los sueldos
-  son distintos. En ese caso la pantalla te enseña con qué ingresos ha
-  repartido, mes a mes: repartir según los ingresos sin enseñarlos es pedir que
-  alguien se fíe de una cifra que no puede comprobar.
+  Nueva pestaña Ajustes. Desde ahí te llevas todo lo tuyo en un clic, en JSON o
+  en CSV: exportar funciona siempre, también sin licencia y también si tu cuenta
+  estuviera en solo lectura. Tus datos son tuyos y Norte no necesita el permiso
+  de nadie para dártelos.
 
-  Cuando cerráis cuentas, Norte calcula las transferencias mínimas de verdad,
-  buscando los grupos que ya se saldan entre ellos. En muchos casos es una
-  transferencia menos que la que propone cualquier otra app. El cierre se
-  guarda con su fecha y sus pagos, y si después aparece un ticket con fecha
-  vieja te avisa en vez de tragárselo.
+  Informe mensual imprimible: los cuatro números del mes, en qué se ha ido el
+  dinero y dónde estás. El PDF lo genera tu propio navegador, y sale siempre en
+  claro aunque uses el modo oscuro.
 
-  Un gasto pagado desde una cuenta privada entra en la cuenta común —el otro
-  necesita ver el concepto y el importe para estar de acuerdo— pero Norte no
-  dice de qué cuenta salió.
+  Licencias para quien quiera vender Norte o instalarlo para más gente. Una
+  persona usa Norte entero y gratis, siempre; la licencia abre el cupo para
+  compartirlo. Se comprueba dentro de tu servidor, sin conexión y sin llamar a
+  ninguna parte. Y si caduca no se borra ni se bloquea nada: el cupo vuelve a
+  una persona y quien sobre puede seguir consultando y exportándolo todo. Quien
+  ya estaba usando su instalación antes de esta versión no cuenta para el cupo,
+  nunca.
 
-  Y si el espacio es un negocio, cada socio tiene su cuenta corriente con la
-  sociedad: lo aportado, lo retirado, lo que le toca del resultado según su
-  participación y lo que ya ha cobrado.
+  Accesibilidad revisada a fondo con herramientas de auditoría: los grises
+  secundarios y el botón principal en modo oscuro no llegaban al contraste
+  mínimo y ahora sí, en todas las pantallas y en los dos temas.
+
+  Y una página nueva de aviso legal y privacidad, con lo que hay que decir
+  claro: Norte no mueve dinero, no se conecta a tu banco, no da asesoramiento
+  de inversión ni fiscal, y sus informes no son documentos contables.
 
 dependencies: []
 path: ""
