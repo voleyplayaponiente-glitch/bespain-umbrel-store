@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.3.1"
+version: "0.3.2"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,9 +29,9 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Arreglo del arranque: el servidor no llegaba a levantarse en una
-  instalación nueva porque la migración de la base de datos no encontraba su
-  cadena de conexión, y el contenedor se quedaba reiniciando. Ya está.
+  La pantalla de inicio se había quedado desactualizada sobre sí misma: decía
+  que las cuentas y los movimientos estaban por llegar cuando ya estaban ahí.
+  Ahora cuenta lo que hay y explica el atajo para apuntar un gasto.
 
   Norte lleva el control del presupuesto personal y el compartido. Apuntar un
   gasto son tres toques: pulsa Ctrl+K (o Cmd+K) y escribe «café 3,40 ayer».
