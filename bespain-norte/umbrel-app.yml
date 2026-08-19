@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "0.6.0"
+version: "0.7.0"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -29,29 +29,29 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Nueva pestaña: Deudas y tarjetas. Metes tu hipoteca o tu préstamo y Norte
-  calcula el cuadro entero, lo que llevas devuelto y lo que te queda.
+  Nueva pestaña: Inversiones. Apuntas lo que compras, lo que vendes y los
+  dividendos, pones el precio de vez en cuando y Norte calcula el coste medio,
+  lo que llevas ganado sin vender y tu rentabilidad real.
 
-  Lo importante es el simulador de amortización anticipada. Pones cuánto quieres
-  meter y te enseña las DOS opciones una al lado de la otra: reducir plazo
-  (misma cuota, acabas antes) y reducir cuota (pagas menos cada mes, acabas
-  igual), con el ahorro de cada una. Y la comisión de tu contrato se resta del
-  ahorro, no se esconde: un simulador que enseña «te ahorras 8.400 €» y calla
-  los 500 € de comisión no te está informando.
+  La rentabilidad es una TIR: tiene en cuenta cuándo metiste cada euro, no solo
+  cuánto. Si todavía no se puede calcular —porque solo has aportado y aún no has
+  valorado la cartera— dice que no se puede, en vez de enseñarte un cero. Para
+  comparar con un índice hace falta otra rentabilidad, la ponderada por tiempo,
+  que necesita valoraciones periódicas: Norte aún no las guarda y te lo dice en
+  la propia pantalla en lugar de darte un número que parece comparable.
 
-  Con varias deudas, compara avalancha (primero el tipo más alto, la que menos
-  intereses paga) y bola de nieve (primero la más pequeña, que paga algo más
-  pero se hace más llevadera), y te dice la diferencia exacta en euros y en
-  meses. La decisión es tuya.
+  Puedes fijar tu asignación objetivo (por ejemplo 70 % variable, 25 % fija,
+  5 % monetario) y Norte avisa cuando la cartera se desvía más de 5 puntos, con
+  cuánto habría que mover para volver. Cinco PUNTOS, no un 5 % relativo:
+  rebalancear por cualquier desvío pequeño solo genera comisiones e impuestos.
 
-  De las tarjetas verás el dato que casi ninguna app enseña: cuántos días de
-  financiación gratis te quedan si compras hoy. Y hay una calculadora de lo que
-  cuesta aplazar: 3.000 € al 24 % pagando el mínimo del 3 % son 159 meses y
-  7.436 € en total. Si la cuota no cubre ni los intereses, te dice que esa deuda
-  no se acaba nunca y cuánto haría falta para que empiece a bajar.
+  Los precios los pones tú: Norte no llama a ninguna web de cotizaciones. Cada
+  precio se guarda con su fecha, y si lleva más de dos meses sin actualizar te
+  lo marca — un precio sin fecha parece de hoy aunque sea de hace medio año.
 
-  Todas las cifras están comprobadas contra cálculos hechos aparte con precisión
-  decimal exacta, no contra el propio programa.
+  Un aviso que verás si vendes con ganancia: el coste medio es lo que enseña tu
+  bróker, pero Hacienda liquida acciones y fondos por FIFO, así que para la
+  declaración la cifra puede no ser esa.
 
 dependencies: []
 path: ""
