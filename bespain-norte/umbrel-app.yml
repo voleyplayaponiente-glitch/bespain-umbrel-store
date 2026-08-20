@@ -4,7 +4,7 @@ name: Norte
 tagline: Control presupuestario personal y compartido
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/app-control-presupuestario-f7omzh/norte/app/public/icon-512.png
 category: finance
-version: "1.0.0"
+version: "1.0.1"
 port: 3012
 description: >-
   Tu dinero, en una pantalla. Norte lleva el control del presupuesto personal y
@@ -30,35 +30,25 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Norte 1.0. Con esta versión está terminado todo lo que se planeó: cuentas y
-  movimientos, lectura de extractos y nóminas, presupuesto por sobres, deudas y
-  tarjetas, inversiones, el cuadro de mando, gastos compartidos y, ahora,
-  exportación, informes y licencias.
+  Norte 1.0.1. Revisión de seguridad a fondo.
 
-  Nueva pestaña Ajustes. Desde ahí te llevas todo lo tuyo en un clic, en JSON o
-  en CSV: exportar funciona siempre, también sin licencia y también si tu cuenta
-  estuviera en solo lectura. Tus datos son tuyos y Norte no necesita el permiso
-  de nadie para dártelos.
+  Se han reforzado los lectores de extractos y hojas de cálculo contra ficheros
+  preparados para agotar la memoria del servidor (un Excel de pocos kilobytes
+  que al abrirse se expande a gigas): ahora se cortan en vez de intentar
+  procesarlos, y Norte sigue en pie.
 
-  Informe mensual imprimible: los cuatro números del mes, en qué se ha ido el
-  dinero y dónde estás. El PDF lo genera tu propio navegador, y sale siempre en
-  claro aunque uses el modo oscuro.
+  La exportación a CSV ya no deja pasar conceptos que empiezan por «=» como
+  fórmulas: en un espacio compartido, alguien podía escribir un concepto que se
+  ejecutara en el Excel de otra persona al abrir su exportación. Ahora se tratan
+  siempre como texto.
 
-  Licencias para quien quiera vender Norte o instalarlo para más gente. Una
-  persona usa Norte entero y gratis, siempre; la licencia abre el cupo para
-  compartirlo. Se comprueba dentro de tu servidor, sin conexión y sin llamar a
-  ninguna parte. Y si caduca no se borra ni se bloquea nada: el cupo vuelve a
-  una persona y quien sobre puede seguir consultando y exportándolo todo. Quien
-  ya estaba usando su instalación antes de esta versión no cuenta para el cupo,
-  nunca.
+  Y la web ahora manda las cabeceras de seguridad que se esperan de una app de
+  finanzas: bloqueo de scripts externos, de que te metan en un iframe y de que
+  el navegador adivine tipos de contenido. Comprobado sirviendo la aplicación de
+  verdad, sin que rompa nada.
 
-  Accesibilidad revisada a fondo con herramientas de auditoría: los grises
-  secundarios y el botón principal en modo oscuro no llegaban al contraste
-  mínimo y ahora sí, en todas las pantallas y en los dos temas.
-
-  Y una página nueva de aviso legal y privacidad, con lo que hay que decir
-  claro: Norte no mueve dinero, no se conecta a tu banco, no da asesoramiento
-  de inversión ni fiscal, y sus informes no son documentos contables.
+  Nada de esto cambia lo que ves ni toca tus datos. Es una actualización que
+  solo cierra puertas.
 
 dependencies: []
 path: ""
