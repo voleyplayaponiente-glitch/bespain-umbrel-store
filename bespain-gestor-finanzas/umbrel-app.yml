@@ -4,7 +4,7 @@ name: Gestión Financiera
 tagline: Contabilidad, tesorería y presupuesto del grupo de empresas
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/tournament-bracket-manager-gvrcdt/finanzas/public/icon-512.png
 category: finance
-version: "1.1.4"
+version: "1.2.0"
 port: 3011
 description: >-
   Gestión financiera integral para el grupo de sociedades: ventas diarias por
@@ -27,11 +27,10 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Cuando un documento se sube en la pantalla equivocada, la app dice a cuál
-  pertenece en vez de dar un error que no ayuda. Es fácil confundirse: el
-  acuerdo de aplazamiento y la declaración del Impuesto sobre Sociedades se
-  descargan de la Sede con nombres casi idénticos, y van a sitios distintos
-  (Deudas y Configuración → Ejercicio anterior).
+  Nueva pestaña «Deudas» en Listados e informes: una fila por contrato con el
+  tipo, el importe inicial, el capital pendiente, la cuota y el tipo de
+  interés, separando deuda bancaria y renting, Hacienda y Seguridad Social, y
+  otras deudas. Con totales por bloque y exportable a CSV, Excel y PDF.
 dependencies: []
 path: ""
 deterministicPassword: true
