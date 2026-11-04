@@ -4,7 +4,7 @@ name: Gestión Financiera
 tagline: Contabilidad, tesorería y presupuesto del grupo de empresas
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/tournament-bracket-manager-gvrcdt/finanzas/public/icon-512.png
 category: finance
-version: "1.3.0"
+version: "1.4.0"
 port: 3011
 description: >-
   Gestión financiera integral para el grupo de sociedades: ventas diarias por
@@ -27,10 +27,13 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  El listado de deudas se puede ver de una sociedad o de TODAS las del grupo a
-  la vez, con el detalle de cada una y los totales del conjunto. Avisa de
-  cuánto de ese total son deudas entre empresas del grupo, que al sumarlas
-  quedan contadas dos veces: es una suma, no una consolidación contable.
+  Copias de seguridad más seguras. Arreglado un fallo por el que, si se cambiaba
+  de empresa justo después de un cambio, la copia de una sociedad podía
+  guardarse con los datos de otra; y otro por el que cerrar la app poco después
+  de un cambio dejaba ese cambio sin copiar. Ahora lo pendiente se sube al
+  volver a abrir, se reintenta solo si falla, y el Dashboard dice en todo
+  momento si la copia está al día. La app avisa además cuando hay una versión
+  nueva.
 dependencies: []
 path: ""
 deterministicPassword: true
