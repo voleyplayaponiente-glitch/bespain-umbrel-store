@@ -4,7 +4,7 @@ name: Gestor Laboral
 tagline: Cuadrantes y control de horas del personal
 icon: https://raw.githubusercontent.com/voleyplayaponiente-glitch/clauderoutine/refs/heads/claude/labor-management-scheduling-app-jd2hcj/src/renderer/public/icon-512.png
 category: files
-version: "1.3.0"
+version: "1.3.1"
 port: 3000
 description: >-
   Planifica cuadrantes mensuales por trabajador y por centro, calcula horas y
@@ -19,10 +19,9 @@ repo: https://github.com/voleyplayaponiente-glitch/clauderoutine
 support: https://github.com/voleyplayaponiente-glitch/clauderoutine/issues
 gallery: []
 releaseNotes: >-
-  Nueva exportación "Listado de trabajadores": PDF y Excel con todos los datos
-  personales (DNI, NSS, dirección, teléfono y email), contrato, horas y centros
-  de trabajo de cada trabajador, listo para enviar a la empresa de PRL o a la
-  mutua, con aviso de confidencialidad RGPD.
+  El listado de trabajadores considera de baja a quien tiene fecha de baja ya
+  cumplida (antes podía salir como activo) y permite filtrar: solo de alta (por
+  defecto), solo de baja, o todos.
 dependencies: []
 path: ""
 deterministicPassword: true
